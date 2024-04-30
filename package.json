@@ -1,0 +1,24 @@
+{
+  "name": "backend-kirvano",
+  "version": "1.0.0",
+  "author": "Leonardo dos Santos Matos",
+  "description": "Aplicação backend para controle de pagamentos",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_PATH=./dist node --loader ts-node/esm dist/src/server.js",
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "build": "tsc -p .",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  }
+}
