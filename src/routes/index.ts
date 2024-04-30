@@ -16,18 +16,10 @@ router.use((req, res, next) => {
   next()
 })
 
-router.post("/teste1", (request, response) => {
-  response.send('teste rota 1');
-})
-
-router.get("/teste2", (request, response) => {
-  response.send('teste rota 2');
-})
-
 // Main Route
-router.get("/", (request, response, next) => {
-  const fullUrl = request.protocol + '://' + request.get('host') + request.originalUrl;
-  response.send(`This is a main route ${fullUrl}`);
+router.get("/", (req, res, next) => {
+  const fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  res.send(`This is a main route ${fullUrl}`);
 })
 
 export { router }
